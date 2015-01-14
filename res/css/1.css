@@ -1,0 +1,35 @@
+﻿body {
+background: #fff;
+color: #696969;
+font-size: 13pt;
+line-height: 150%;
+font-family: times, Times New Roman, times-roman, georgia, serif, 맑은고딕; 
+overflow-x:hidden;
+}
+	
+button{
+  line-height: 320%;
+  border:1px solid #0a3c59;
+  padding:10.5px 21px;
+  border-radius:6px;
+  text-decoration: none;
+  vertical-align: middle;
+  border:0px;background-color:#000;color:#fff;
+  cursor:pointer;
+  margin:0 1em 0 0;
+}
+
+table{ border:1px solid #ccc;border-collapse:collapse;border-spacing:5px; }
+tr, td { border:1px solid #ccc; padding:5px; text-align:center;}
+
+.top { position:relative;float:left;height:2.5em; width:150%;margin: -0.5em 0 1em -0.5em;background-color:#000;}
+.top span { color:#fff;position:relative;float:left;margin: 0.5em 0 0 1em; }
+.top span a { color:#fff;size:10pt;text-decoration:none;}
+.list { position:relative;float:left;height:100%; width:15em;max-width: 15em;margin: 0 0 0em 0.5em;}
+.list a { color:#000;text-decoration:none;}
+.list ul .parent { margin:0 0 0 0; }
+.list ul .child { margin:0 0 0 2em; }
+.view { position:relative;float:left;height:100%; max-width: 30em; margin: 1em 0 0em 0em; }
+.view_edit { position:relative;float:left;height:100%; max-width: 50em; margin: 1em 0 0em 0em; }
+.view_edit input{ border:2px solid;}
+.footer { position:absolute;bottom:0;height:2.5em; width:150%;margin:0em;background-color:#000;}
