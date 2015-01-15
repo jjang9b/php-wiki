@@ -84,7 +84,8 @@ $(function(){
           {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
         ],
 
-        init_instance_callback : this.callback 
+        init_instance_callback : this.callback,
+        autosave_ask_before_unload:false
 
       });
 
