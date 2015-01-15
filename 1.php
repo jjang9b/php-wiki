@@ -32,16 +32,18 @@ function _setWrite()//{{{
   $aInfoAll[ $hash_name ] = $aInfo;
   $sInfo = _make('$info', $aInfoAll);
 
-  $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
+  $result_tpl = file_put_contents($tpl_path, $conts);
 
-  if($result_config)
+  if($result_tpl)
   {
-    @chmod(CONFIG_PATH, 0777);
-    $result_tpl = file_put_contents($tpl_path, $conts);
     @chmod($tpl_path, 0777);
 
-    if($result_tpl)
-      _echo_json(array('hash_name'=>$hash_name, 'ret'=>$result_tpl));
+    $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
+
+    @chmod(CONFIG_PATH, 0777);
+
+    if($result_config)
+      _echo_json(array('hash_name'=>$hash_name, 'ret'=>$result_tpl.' | '.$result_config));
   }
 
   _echo_json(array('hash_name'=>$hash_name, 'ret'=>false));
