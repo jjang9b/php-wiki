@@ -95,45 +95,41 @@ $(function(){
 
     }, getList : function(){
 
-      setTimeout(function(){
+      $.getJSON( _url, {ac:'getList'}, function( res ){
 
-        $.getJSON( _url, {ac:'getList'}, function( res ){
+        var _list = window._list = [];
 
-          var _list = window._list = [];
+        for(var k in res.ret){
 
-          for(var k in res.ret){
+          var data = res.ret[ k ];
 
-            var data = res.ret[ k ];
+          if( window._list[ data.parent_hash ] ){
 
-            if( window._list[ data.parent_hash ] ){
+            window._list[ data.parent_hash ][ k ] = data;
+          
+          } else {
 
-              window._list[ data.parent_hash ][ k ] = data;
-            
-            } else {
-
-              window._list[ k ] = [];
-              window._list[ k ][ k ] = data;
-            }
-
+            window._list[ k ] = [];
+            window._list[ k ][ k ] = data;
           }
 
-          for(var a in _list){
+        }
 
-            for(var b in _list[ a ]){
-              var _li = '';
+        for(var a in _list){
 
-              if( _list[ a ][ b ].parent_hash == '' )
-                _li = '<li class="parent"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
-              else          
-                _li = '<li class="child"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
+          for(var b in _list[ a ]){
+            var _li = '';
 
-              $( '.list ul' ).append( _li );
-            }
+            if( _list[ a ][ b ].parent_hash == '' )
+              _li = '<li class="parent"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
+            else          
+              _li = '<li class="child"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
+
+            $( '.list ul' ).append( _li );
           }
+        }
 
-        });
-
-      }, 50);
+      });
 
     }, getView : function(){
     
@@ -214,7 +210,7 @@ $(function(){
           alert( 'success to write, just wait moment' );
           setTimeout(function(){
             $(location).attr( 'href', '1.html?h=' + res.hash_name );
-          }, 2500);
+          }, 2300);
         }
         else{
           alert( 'fail to write' ); 
