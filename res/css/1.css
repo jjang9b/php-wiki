@@ -29,7 +29,7 @@ tr, td { border:1px solid #ccc; padding:5px; text-align:center;}
 .list a { color:#000;text-decoration:none;}
 .list ul .parent { margin:0 0 0 0; }
 .list ul .child { margin:0 0 0 2em; }
-.view { position:relative;float:left;height:100%; max-width: 30em; margin: 1em 0 0em 0em; }
+.view { position:relative;float:left;height:100%; max-width: 30em; margin: 1em 0 0em 0em;font-size: 11pt; }
 .view_edit { position:relative;float:left;height:100%; max-width: 50em; margin: 1em 0 0em 0em; }
 .view_edit input{ border:2px solid;}
 .footer { position:absolute;bottom:0;height:2.5em; width:150%;margin:0em;background-color:#000;}

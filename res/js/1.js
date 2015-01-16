@@ -57,6 +57,10 @@ $(function(){
         selector: "textarea",
         height:700,
 
+        force_br_newlines : true,
+        force_p_newlines : false,
+        forced_root_block : '',
+
         plugins: [
         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",

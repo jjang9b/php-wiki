@@ -40,8 +40,6 @@ function _setWrite()//{{{
 
     $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
 
-    @chmod(CONFIG_PATH, 0777);
-
     if($result_config)
       _echo_json(array('hash_name'=>$hash_name, 'ret'=>$result_tpl.' | '.$result_config));
   }
