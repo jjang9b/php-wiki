@@ -97,35 +97,59 @@ $(function(){
 
       $.getJSON( _url, {ac:'getList'}, function( res ){
 
-        var _list = window._list = [];
+        var _sort_parent = []
+          , _sort_child = [];
 
-        for(var k in res.ret){
+        for(var s in res.parent_info){
+          res.parent_info[ s ].hash_key = s;
 
-          var data = res.ret[ k ];
-
-          if( window._list[ data.parent_hash ] ){
-
-            window._list[ data.parent_hash ][ k ] = data;
-          
-          } else {
-
-            window._list[ k ] = [];
-            window._list[ k ][ k ] = data;
-          }
-
+          _sort_parent.push( res.parent_info[ s ] );
         }
 
-        for(var a in _list){
+        for(var s in res.child_info){
+          res.child_info[ s ].hash_key = s;
+          _sort_child.push( res.child_info[ s ] );
+        }
 
-          for(var b in _list[ a ]){
-            var _li = '';
+        _sort_parent.sort(function(a, b){ return a.reg_dt - b.reg_dt });
+        _sort_child.sort(function(a, b){ return a.reg_dt - b.reg_dt });
 
-            if( _list[ a ][ b ].parent_hash == '' )
-              _li = '<li class="parent"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
-            else          
-              _li = '<li class="child"><a href="1.html?h=' + b + '">' + _list[ a ][ b ].name + '</a></li>';
+        for(var k in _sort_parent){
+
+          var key = _sort_parent[ k ].hash_key;
+
+          for(var c in _sort_child){
+
+            var c_key = _sort_child[ c ].hash_key
+              , c_data = _sort_child[ c ];
+
+            if(key == c_data.parent_hash){
+
+              if(_sort_parent[ k ].child === undefined)
+                _sort_parent[ k ].child = [];
+
+              _sort_parent[ k ].child.push( c_data );
+              delete _sort_child[ c ];
+            
+            }
+          
+          }
+        }
+
+        for(var a in _sort_parent){
+
+          var _li = '';
+
+          _li = '<li class="parent"><a href="1.html?h=' + _sort_parent[ a ].hash_key + '">' + _sort_parent[ a ].name + '</a></li>';
+          $( '.list ul' ).append( _li );
+
+          for(var b in _sort_parent[ a ].child){
+
+            _li = '<li class="child"><a href="1.html?h=' + _sort_parent[ a ].child[ b ].hash_key + '">' 
+              + _sort_parent[ a ].child[ b ].name + '</a></li>';
 
             $( '.list ul' ).append( _li );
+
           }
         }
 
