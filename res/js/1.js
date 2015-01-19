@@ -190,13 +190,18 @@ $(function(){
             }), child_add = $( '<button></button>' ).text( 'child_add' ).click(function(){
               _func.goModWrite( '', _tpl[ 1 ], 2 );
 
+            }), dele = $( '<button></button>' ).text( 'delete' ).click(function(){
+              _func.dele( _tpl[ 1 ] );
+
             });
+
             $( '.view' ).append( $( '<div></div>' ).css( 'height', '3em' ).css( 'width', '100%' ) );
             $( '.view' ).append( modify );
 
             if( res.ret.parent_hash == '' )
               $( '.view' ).append( child_add );
 
+            $( '.view' ).append( dele );
             $( '.view' ).append( $( '<div></div>' ).css( 'height', '3em' ).css( 'width', '100%' ) );
           });
 
@@ -212,6 +217,29 @@ $(function(){
 
     }, goModWrite : function( hash_name, parent_hash, type ){
       $(location).attr( 'href', 'w.html?h=' + hash_name + '&ph=' + parent_hash + '&t=' + type );
+
+    }, dele : function( hash_name ){
+
+      $.getJSON( _url, {ac:'getExistChild', hash_name:_tpl[ 1 ]}, function( res ){
+
+        if( res.ret ){
+          alert( 'You Have Child wiki!' );
+          return false;
+
+        } else {
+          if(confirm( 'Are you sure you want to delete this wiki?' )){
+            $.post(_url, {ac:'setDelete', hash_name:hash_name}, function( res ){ 
+
+              if( res.ret !== false ){
+                alert( 'success to delete, just wait moment' );
+                setTimeout(function(){
+                  $(location).attr( 'href', '1.html' );
+                }, 2300);
+              }
+            });
+          }
+        }
+      });
 
     }, setRegConts : function( conts ){
 
