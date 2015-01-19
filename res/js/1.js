@@ -138,14 +138,26 @@ $(function(){
 
         for(var a in _sort_parent){
 
-          var _li = '';
+          var _li = ''
+            , _class = '';
 
-          _li = '<li class="parent"><a href="1.html?h=' + _sort_parent[ a ].hash_key + '">' + _sort_parent[ a ].name + '</a></li>';
+          if( _tpl !== undefined )
+            ( _tpl[ 1 ] == _sort_parent[ a ].hash_key ) ? _class = 'parent now' : _class = 'parent';
+          else
+            _class = 'parent';
+
+          _li = '<li class="' + _class + '"><a href="1.html?h=' + _sort_parent[ a ].hash_key + '">' + _sort_parent[ a ].name + '</a></li>';
+
           $( '.list ul' ).append( _li );
 
           for(var b in _sort_parent[ a ].child){
 
-            _li = '<li class="child"><a href="1.html?h=' + _sort_parent[ a ].child[ b ].hash_key + '">' 
+          if( _tpl !== undefined )
+            ( _tpl[ 1 ] == _sort_parent[ a ].child[ b ].hash_key ) ? _class = 'child now' : _class = 'child';
+          else
+            _class = 'child';
+
+            _li = '<li class="' + _class +'"><a href="1.html?h=' + _sort_parent[ a ].child[ b ].hash_key + '">' 
               + _sort_parent[ a ].child[ b ].name + '</a></li>';
 
             $( '.list ul' ).append( _li );
