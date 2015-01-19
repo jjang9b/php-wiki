@@ -29,7 +29,13 @@ function _setWrite()//{{{
   $conts = $_POST[ 'conts' ];
 
   if(empty($hash_name) || $hash_name == '' || (int)$type == 2)
+  {
     $hash_name = _makeRanFileName( 10 );
+    $tpl_path = "tpl/$hash_name".".tpl";
+
+    while(file_exists($tpl_path))
+      $hash_name = _makeRanFileName( 10 );
+  }
 
   $tpl_path = "tpl/$hash_name".".tpl";
 
