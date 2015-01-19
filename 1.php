@@ -6,7 +6,19 @@ function _getList()//{{{
 {
   require_once CONFIG_PATH;
 
-  _echo_json(array('ret'=>$info));
+  $parent_info = array();
+  $child_info = array();
+
+  foreach($info as $key=>$value)
+  {
+    if($value[ 'parent_hash' ] == '')
+      $parent_info[ $key ] = $value;
+    else
+      $child_info[ $key ] = $value;
+  
+  }
+
+  _echo_json(array('parent_info'=>$parent_info, 'child_info'=>$child_info));
 }//}}}
 function _setWrite()//{{{
 {
