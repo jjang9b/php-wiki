@@ -223,7 +223,7 @@ $(function(){
       $.getJSON( _url, {ac:'getExistChild', hash_name:_tpl[ 1 ]}, function( res ){
 
         if( res.ret ){
-          alert( 'You Have Child wiki!' );
+          alert( 'You have child wiki!' );
           return false;
 
         } else {
