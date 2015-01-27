@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
 background: #fff;
 color: #696969;
 font-size: 11.5pt;
