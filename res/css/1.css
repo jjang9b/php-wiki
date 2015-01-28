@@ -28,8 +28,8 @@ tr, td { border:1px solid #ccc; padding:5px; text-align:center;}
 .top span { color:#fff;position:relative;float:left;margin: 0.5em 0 0 1em; }
 .top span a { color:#fff;size:10pt;text-decoration:none;}
 .list { position:relative;float:left;height:100%; width:15em;max-width: 15em;margin: 0 0 0em 0.5em;}
-.list ul .parent { margin:0 0 0 0; font-weight:bold; }
-.list ul .child { margin:0.2em 0 0 2em; font-size: 10pt;}
+.list ul .parent { margin:0.5em 0 0 0; font-weight:bold; }
+.list ul .child { margin:0.5em 0 0 2em; font-size: 10pt;}
 .list ul .now { color:red !important; }
 .list ul .now a { color:red !important; }
 .list ul a { color:#000;text-decoration:none; }
