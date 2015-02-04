@@ -5,7 +5,7 @@
 <body>
 <span style="color: #993300;"><strong>[ 5. </strong><strong>기타 ]</strong></span>
 <ol>
-<li><span style="color: #993300;"><strong>SCE(Strict Contextual Escaping)</strong> 을 통한<strong> XSS, 클랙재킹 </strong>등의 보안 대책.<br /><br /></span></li>
+<li><span style="color: #993300;"><span style="color: #000000;"><strong>SCE(Strict Contextual Escaping)</strong> 을 통한<strong> XSS, 클랙재킹 </strong>등의 보안 대책.</span><br /><br /></span></li>
 <li><strong>jqLite</strong>가 내장되어 있어 기본적인 <span>jQuery </span>함수 사용 가능<span>.<br /><br /></span></li>
 <li>controller에 해당되는<span> js</span>의 작성이<span> callback </span>형태로 되어 있어<span>, </span>노출을 원하는 부분은<span> view</span>쪽에 설정해 주고<span>, </span>처리 부분은<span> js</span>에서 인자로 넘겨 받아 처리 요청만 하면 되는 형태<span>. (filter)<br /> ex) </span><span><a href="http://tutorialzine.com/2013/08/learn-angularjs-5-examples/">http://tutorialzine.com/2013/08/learn-angularjs-5-examples/</a></span> ( 4. Instant Search )<br /><br /></li>
 <li>AngularJS Hint <br /> - 개발 모범 사례 준수 여부 체크<span><br /> - </span><span><a href="https://github.com/angular/angular-hint">https://github.com/angular/angular-hint</a></span><br /><br />
