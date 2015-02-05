@@ -61,6 +61,21 @@ $(function(){
         force_p_newlines : false,
         forced_root_block : '',
 
+        setup: function(ed) {
+          ed.on('keydown', function(event) {
+            if (event.keyCode == 9){// tab pressed
+              if (event.shiftKey)
+                ed.execCommand('Outdent');
+              else
+                ed.execCommand('Indent');
+
+              event.preventDefault();
+
+              return false;
+            }
+          });
+        },
+
         plugins: [
         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
