@@ -61,10 +61,25 @@ $(function(){
         force_p_newlines : false,
         forced_root_block : '',
 
+        setup: function(ed) {
+          ed.on('keydown', function(e) {
+            if (e.keyCode == 9 && !e.altKey && !e.ctrlKey) {
+              if (e.shiftKey){
+              
+              } else {
+                ed.insertContent('&nbsp;&nbsp;')
+                e.preventDefault();
+              }
+
+              return tinymce.dom.Event.cancel(e);
+            }
+          });
+        },
+
         plugins: [
-        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-        "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+          "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
         ],
 
         toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | " 
