@@ -24,17 +24,17 @@ button{
 table{ border:1px solid #ccc;border-collapse:collapse;border-spacing:5px; }
 tr, td { border:1px solid #ccc; padding:5px; text-align:center;}
 
-.top { position:relative;float:left;height:2.5em; width:150%;margin: -0.5em 0 1em -0.5em;background-color:#fff;}
+.top { position:relative;float:left;height:2.5em; width:150%;margin: 2em 0 1em 0.9em;background-color:#fff;}
 .top span { position:relative;float:left;margin: 0.5em 0 0 1em; }
 .top span a { color:#855555;font-weight:bold;size:10pt;text-decoration:none;}
-.title { position:relative;float:left;height:100%; width:15em;color:#000;max-width: 15em;margin: 0 0 0em 2em;}
+.title { position:relative;float:left;height:100%; width:15em;color:#000;max-width: 15em;margin: 1em 0 0em 2em;}
 .list { position:relative;float:left;clear:both;height:100%; width:15em;max-width: 15em;margin: 0 0 0em 0.5em;}
 .list ul .parent { margin:0.5em 0 0 0; font-weight:bold; font-size:10pt; }
 .list ul .child { margin:0.5em 0 0 2em; font-size: 9.5pt;}
 .list ul .now { color:red !important; }
 .list ul .now a { color:red !important; }
 .list ul a { color:#000;text-decoration:none; }
-.view { position:relative;float:left;height:100%; max-width: 55em; margin: 0em 0 0em 5em;font-size: 10.5pt;}
+.view { position:relative;float:left;height:100%; max-width: 55em; margin: -2em 0 0em 5em;font-size: 10.5pt;}
 .view_edit { position:relative;float:left;height:100%; max-width: 50em; margin: 1em 0 0em 0em; }
 .view_edit input{ border:2px solid;}
 .footer { position:absolute;bottom:0;height:2.5em; width:150%;margin:0em;background-color:#000;}
