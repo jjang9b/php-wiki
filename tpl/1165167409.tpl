@@ -3,14 +3,14 @@
 <head>
 </head>
 <body>
-<strong><span style="color: #993300;">[기본] this 유효범위<br /><br /></span></strong><br /> <strong>this 유효범위<span> (scope)</span></strong> <strong><span>&nbsp;<br /><br /></span></strong>
+<strong><span style="color: #993300;">[기본] this 유효범위<br /><br /></span></strong><br /> <span style="color: #333333;"><strong>this 유효범위 (scope)</strong></span><strong><span><br /><br /></span></strong>
 <ol>
-<li><strong>독립적으로 선언된 함수일 경우 </strong><span>(standalone function)</span> <br />
+<li><span style="color: #333333;"><strong>독립적으로 선언된 함수일 경우 </strong>(standalone function)</span> <br />
 <pre><code class="javascript"><span>function a(){<br /> console.log( this );<br />}<br />a(); // window 객체. Global 객체를 가르킴<br /><br />var a = function(){<br /> console.log( this );<br />}<br />a(); // 동일하게 window 객체<br /><br /></span></code></pre>
 </li>
 </ol>
 <ol start="2">
-<li><strong>특정<span> object</span>의<span> method</span>로 선언된 경우</strong> <br />
+<li><span style="color: #333333;"><strong>특정 object의 method로 선언된 경우</strong> </span><br />
 <pre><code class="javascript">var a = {<br /> b : function(){<br />  console.log( this );<br /> }<br />}<br />a.b(); // a 객체를 가르킴<br /></code></pre>
 </li>
 </ol>
