@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<span style="color: #993300;"><strong>[모바일] Client 보안<br /><br /><br /><span style="color: #333333;">1. 메모리 변조<br /><br />@ </span></strong><span style="color: #333333;">해킹 기법 참고 사이트&nbsp;</span><strong><span style="color: #333333;"><a href="http://appzzang.ca/">http://appzzang.ca/</a><br /><br />-&nbsp;</span></strong><span style="color: #333333;">메모리 shuffling<br /><br />&nbsp; 1. 메모리 데이터를 압호화하여 저장 &nbsp;(ex) mem : 0vx293xfjkv<br />&nbsp; 2. 암호화 데이터를 <span style="color: #993300;">분할하여 각각 메모리에 저장</span> (ex) mem1 : ovx29, mem2 : xfjkv<br />&nbsp; 3. 기존 값을 <span style="color: #993300;">참조하는 주소값</span>으로 대체 (ex) mem1data : mem1주소, mem2data : mem2주소<br /><br />- 변수 복사<strong><br /><br /></strong>&nbsp; 1. <span style="color: #993300;">데이터를 각각 다른 변수에 다른 암호화 방식으로 저장</span><br />&nbsp; &nbsp; &nbsp; ex) data : 1024<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data1 : 0f22xxdt<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data2 : 0cwxxfdf<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data3 : 39xny387<br /><br />&nbsp; 2. 데이터 로딩시 매번 두개 변수와 비교값 체크<br /><br /><br /><strong>2. 난독화<br /><br /></strong>- 개발 소스 자체의 디컴파일을 통한 주석이 제거된 소스코드를 획득할 수 있다.<br />- 난독화 솔루션 : CodeGuard, ProGuard, Obfuscator 등<br /><br /><br /><strong>3. 로컬 데이터 암호화<br /></strong><br />- 반드시 <span style="color: #993300;">암호화 및 Hash값 등을 통한 변조 저장</span><br />- 서버 통신시 변조 여부 확인 로직 추가<br />- <span style="color: #993300;">.dat, .sav</span> 등의 확장자는 피하도록 한다.<br />- 각 단말기별 저장된 파일을 <span style="color: #993300;">다른 단말기로 복사하여 사용할 수 없도록 한다</span>.<br />- 중요 데이터는 반드시 <span style="color: #993300;">서버저장</span>을 하도록 한다.<br /><br /><br /><strong>4. 디버그 로그<br /><br /></strong>- 서비스 빌드에는 디버그 로그를 노출하지 않도록 한다.<br /></span></span>
+</body>
+</html>
