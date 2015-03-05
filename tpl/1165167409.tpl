@@ -14,6 +14,6 @@
 <pre><code class="javascript">var a = {<br /> b : function(){<br />  console.log( this );<br /> }<br />}<br />a.b(); // a 객체를 가르킴<br /></code></pre>
 </li>
 </ol>
-<span><br />@ </span>참고로 이렇게<span> this</span>의 유효범위가 정해지기 때문에 이를 임의로 조작하기 위해 <br /><span style="color: #993300;">call / apply 함수를 이용해 this의 유효범위를 변경</span>해 줍니다<span>.</span>
+<span><br /><span style="color: #000000;">@ </span></span><span style="color: #000000;">참고로 이렇게 this의 유효범위가 정해지기 때문에 이를 임의로 조작하기 위해</span> <br /><span style="color: #993300;">call / apply 함수를 이용해 this의 유효범위를 변경</span><span style="color: #000000;">해 줍니다.</span>
 </body>
 </html>

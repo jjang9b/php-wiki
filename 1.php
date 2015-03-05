@@ -76,7 +76,6 @@ function _setWrite()//{{{
 
     $result_tpl = file_put_contents($tpl_path, $conts);
 
-    _echo_json(array('hash_name'=>$hash_name, 'ret'=>false, 'msg'=>$result_tpl));
     if($result_tpl)
     {
       @chmod($tpl_path, 0777);
