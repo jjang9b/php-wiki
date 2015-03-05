@@ -1,6 +1,7 @@
 <?php
 define('TPL_DIRECTORY', 'tpl');
 define('CONFIG_PATH', 'config/info.config.php');
+set_error_handler( create_function( '$severity, $message, $file, $line', 'throw new ErrorException($message, $severity, $severity, $file, $line);'));
 
 function _setDelete()//{{{
 {
@@ -71,16 +72,23 @@ function _setWrite()//{{{
   $aInfoAll[ $hash_name ] = $aInfo;
   $sInfo = _make('$info', $aInfoAll);
 
-  $result_tpl = file_put_contents($tpl_path, $conts);
+  try{
 
-  if($result_tpl)
-  {
-    @chmod($tpl_path, 0777);
+    $result_tpl = file_put_contents($tpl_path, $conts);
 
-    $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
+    _echo_json(array('hash_name'=>$hash_name, 'ret'=>false, 'msg'=>$result_tpl));
+    if($result_tpl)
+    {
+      @chmod($tpl_path, 0777);
 
-    if($result_config)
-      _echo_json(array('hash_name'=>$hash_name, 'ret'=>$result_tpl.' | '.$result_config));
+      $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
+
+      if($result_config)
+        _echo_json(array('hash_name'=>$hash_name, 'ret'=>$result_tpl.' | '.$result_config));
+    }
+
+  } catch(Exception $e) {
+    _echo_json(array('hash_name'=>$hash_name, 'ret'=>false, 'msg'=>$e->getMessage()));
   }
 
   _echo_json(array('hash_name'=>$hash_name, 'ret'=>false));
@@ -181,3 +189,5 @@ switch(strtolower($action))
     _setDelete();
     break;
 }
+
+restore_error_handler();
