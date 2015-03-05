@@ -78,7 +78,10 @@ function _setWrite()//{{{
 
     if($result_tpl)
     {
-      @chmod($tpl_path, 0777);
+      $file_perms = substr(sprintf('%o', fileperms($tpl_path)), -4);
+
+      if(!in_array($file_perms, array('0777')))
+        @chmod($tpl_path, 0777);
 
       $result_config = file_put_contents(CONFIG_PATH, '<?php'."\n".$sInfo); 
 
