@@ -59,7 +59,7 @@ $(function(){
         language : 'ko'    
       });
 
-      CKEDITOR.config.width = '50em';
+      CKEDITOR.config.width = '90%';
       CKEDITOR.config.height = '45em';
 
     }, getList : function(){
