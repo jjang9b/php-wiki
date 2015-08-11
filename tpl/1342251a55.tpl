@@ -3,8 +3,8 @@
 <p><strong>Requirements</strong></p>
 
 <p>php 4.x or higher installed<br />
-chmod -R 777 config<br />
-chmod -R 777 tpl</p>
+<span style="color:#800000"><strong>chmod -R 777 config<br />
+chmod -R 777 tpl</strong></span></p>
 
 <p>&nbsp;</p>
 
