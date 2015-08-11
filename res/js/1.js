@@ -25,6 +25,12 @@ $(function(){
 
     }, wInit : function(){
 
+      _func.onResizeWrite( _func.ckInit );
+
+      $( window ).resize(function(){
+        _func.onResizeWrite( _func.ckResize );
+      });
+
       if( _tpl !== undefined && _type !== undefined ){
         if( _type[ 1 ] != 2 ){
 
@@ -255,12 +261,6 @@ $(function(){
 
   if( CKEDITOR !== undefined ) _func.wInit();
   else _func.init();
-
-  _func.onResizeWrite( _func.ckInit );
-
-  $( window ).resize(function(){
-    _func.onResizeWrite( _func.ckResize );
-  });
 
   window.wiki = _wiki; 
 
