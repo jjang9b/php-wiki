@@ -1,4 +1,4 @@
-<p><strong>[Chrome] 206 partial content</strong></p>
+<p><span style="color:#B22222"><strong>[Chrome] 206 partial content</strong></span></p>
 
 <p>&nbsp;</p>
 

@@ -36,11 +36,22 @@ $(function(){
         }
       }
 
-      _func.ckInit();
-
       $( '#b_write' ).click( _wiki.write );
 
-    }, ckInit : function(){
+    }, onResizeWrite : function( callback ){
+
+      var nHeight = $( window ).height()
+        , nTopHeight = $( '.top' ).height()
+        , nSubHeight = $( '#i_subj' ).height();
+      var nReHeight = parseInt(nHeight - nTopHeight - nSubHeight - 350);
+
+      callback( nReHeight );
+
+    }, ckResize : function( nReHeight ){
+
+      CKEDITOR.instances.t_edit.resize( '90%', nReHeight + 150 );
+
+    }, ckInit : function( nReHeight ){
       this.setConts = function(){
       
         if( _tpl !== undefined && _type !== undefined ){
@@ -60,7 +71,7 @@ $(function(){
       });
 
       CKEDITOR.config.width = '90%';
-      CKEDITOR.config.height = '45em';
+      CKEDITOR.config.height = nReHeight;
 
     }, getList : function(){
 
@@ -244,6 +255,12 @@ $(function(){
 
   if( CKEDITOR !== undefined ) _func.wInit();
   else _func.init();
+
+  _func.onResizeWrite( _func.ckInit );
+
+  $( window ).resize(function(){
+    _func.onResizeWrite( _func.ckResize );
+  });
 
   window.wiki = _wiki; 
 
