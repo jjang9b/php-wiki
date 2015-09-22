@@ -37,31 +37,32 @@
 <p><strong>3. build.gradle 필수 요소들 설정</strong></p>
 
 <p>&nbsp;</p>
+
 <pre>
-<code>
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'war'
-apply plugin: 'spring-boot'
-apply plugin: 'application'
+<code class="java">
+apply plugin: &#39;java&#39;
+apply plugin: &#39;eclipse&#39;
+apply plugin: &#39;war&#39;
+apply plugin: &#39;spring-boot&#39;
+apply plugin: &#39;application&#39;
 
 buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        maven { url "https://repo.spring.io/libs-release" }
+        maven { url &quot;https://repo.spring.io/libs-release&quot; }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE")
-        classpath("org.codehaus.groovy:groovy-eclipse-compiler:2.9.1-01")
+        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE&quot;)
+        classpath(&quot;org.codehaus.groovy:groovy-eclipse-compiler:2.9.1-01&quot;)
     }
 }
 
-mainClassName = "project.MainApplication"
+mainClassName = &quot;project.MainApplication&quot;
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Push Admin', 'Implementation-Version': '1.0'
+        attributes &#39;Implementation-Title&#39;: &#39;Push Admin&#39;, &#39;Implementation-Version&#39;: &#39;1.0&#39;
     }
 }
 
@@ -71,43 +72,43 @@ repositories {
 
 dependencies {   
 	// spring
-	compile("org.springframework.boot:spring-boot-starter-web") {
-        //exclude module: "spring-boot-starter-tomcat"
+	compile(&quot;org.springframework.boot:spring-boot-starter-web&quot;) {
+        //exclude module: &quot;spring-boot-starter-tomcat&quot;
     }
-	compile("org.springframework:spring-context-support")	
+	compile(&quot;org.springframework:spring-context-support&quot;)	
 	
 	// actuator
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile(&quot;org.springframework.boot:spring-boot-starter-actuator&quot;)
 	
 	// database
-	compile("org.springframework:spring-jdbc")
-	compile("commons-dbcp:commons-dbcp")
-    compile("mysql:mysql-connector-java:5.1.31")
-    compile("org.mybatis:mybatis:3.2.7")
-    compile("org.mybatis:mybatis-spring:1.2.2")
+	compile(&quot;org.springframework:spring-jdbc&quot;)
+	compile(&quot;commons-dbcp:commons-dbcp&quot;)
+    compile(&quot;mysql:mysql-connector-java:5.1.31&quot;)
+    compile(&quot;org.mybatis:mybatis:3.2.7&quot;)
+    compile(&quot;org.mybatis:mybatis-spring:1.2.2&quot;)
     
     // log
-    compile "ch.qos.logback:logback-classic:1.1.2"
+    compile &quot;ch.qos.logback:logback-classic:1.1.2&quot;
     
     // jsp, jstl
-    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
-    compile("javax.servlet:jstl")
+    compile(&quot;org.apache.tomcat.embed:tomcat-embed-jasper&quot;)
+    compile(&quot;javax.servlet:jstl&quot;)
     
     // apache common
-    compile("commons-io:commons-io:2.4")
-    compile("org.apache.commons:commons-csv:1.1")
-    compile("org.apache.commons:commons-lang3:3.3.2")
-    compile("org.apache.commons:commons-pool2:2.3")    
+    compile(&quot;commons-io:commons-io:2.4&quot;)
+    compile(&quot;org.apache.commons:commons-csv:1.1&quot;)
+    compile(&quot;org.apache.commons:commons-lang3:3.3.2&quot;)
+    compile(&quot;org.apache.commons:commons-pool2:2.3&quot;)    
 }
 
 test {
-    systemProperties 'property': 'value'
+    systemProperties &#39;property&#39;: &#39;value&#39;
 }
 
 uploadArchives {
     repositories {
        flatDir {
-           dirs 'repos'
+           dirs &#39;repos&#39;
        }
     }
 }
