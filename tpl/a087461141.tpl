@@ -1,7 +1,9 @@
-<pre><code class="sql">
-insert into mysql.user (host, user, password, ssl_cipher, x509_issuer, x509_subject) values( 'localhost', 'root', password('root'), 0, 0, 0);
+<pre>
+<code>
+insert into mysql.user (host, user, password, ssl_cipher, x509_issuer, x509_subject) values( &#39;localhost&#39;, &#39;root&#39;, password(&#39;root&#39;), 0, 0, 0);
 
 
+DROP TABLE IF EXISTS t_char;
 CREATE TABLE `t_char` (
 `user_idx` bigint(20) NOT NULL,
 `char_idx` bigint(20) NOT NULL,
@@ -16,7 +18,7 @@ UNIQUE KEY `item_add_idx_UNIQUE` (`item_add_idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+DROP TABLE IF EXISTS t_char_prop;
 CREATE TABLE `t_char_prop` (
 `user_idx` bigint(20) NOT NULL,
 `char_idx` bigint(20) NOT NULL,
@@ -29,6 +31,7 @@ UNIQUE KEY `user_idx_UNIQUE` (`user_idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS t_char_stat_mst;
 CREATE TABLE `t_char_stat_mst` (
 `char_idx` bigint(20) NOT NULL,
 `att` varchar(10) NOT NULL,
@@ -43,6 +46,7 @@ PRIMARY KEY (`char_idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS t_user;
 CREATE TABLE `t_user` (
 `user_idx` bigint(20) NOT NULL,
 `id` varchar(15) NOT NULL,
