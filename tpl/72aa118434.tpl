@@ -2,7 +2,7 @@
 
 <p>&nbsp;</p>
 
-<p><strong><span style="color:#993300">[mssql] index 명령어</span></strong></p>
+<p><strong><span style="color:#993300">[mysql] index 명령어</span></strong></p>
 
 <p>&nbsp;</p>
 
