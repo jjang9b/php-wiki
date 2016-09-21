@@ -4,22 +4,32 @@ export GREP_OPTIONS=&#39;--color=always&#39; GREP_COLOR=&#39;1;32&#39; # grep ìƒ
 <br />
 search(){<br />
 find ./ -name &#39;*.php&#39; | xargs grep -irn $1 |more<br />
-}<br />
+}</span><br />
 <br />
+<<<<<<< HEAD
 <strong>.vimrc</strong></span></p>
 
 <p><strong style="line-height:1.6">set</strong><span style="line-height:1.6">&nbsp;</span><strong style="line-height:1.6">encoding</strong><span style="line-height:1.6">=utf-8</span></p>
 
 <p>set&nbsp;fileencodings=utf-8,euckr<br />
+=======
+<strong>.vimrc</strong><br />
+<br />
+>>>>>>> 4b7274f3ab9544141c54c6b941b36fa919c0b33d
 <span style="color:#000000">map &lt;C-j&gt; :bp &lt;CR&gt;<br />
 map &lt;C-k&gt; :bn &lt;CR&gt;<br />
 <br />
 set ts=2<br />
 set expandtab<br />
 set cindent<br />
-set shiftwidth=2<br />
-<br />
-set foldmethod=marker<br />
+set shiftwidth=2</span><br />
+&nbsp;</p>
+
+<p><span style="color:#000000">set encoding=utf-8<br />
+set fileencodings=utf-8,euckr</span></p>
+
+<p><br />
+<span style="color:#000000">set foldmethod=marker<br />
 set fdm=marker</span></p>
 
 <p>&nbsp;</p>
