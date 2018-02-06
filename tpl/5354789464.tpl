@@ -6,16 +6,13 @@ search(){<br />
 find ./ -name &#39;*.php&#39; | xargs grep -irn $1 |more<br />
 }</span><br />
 <br />
-<<<<<<< HEAD
 <strong>.vimrc</strong></span></p>
 
 <p><strong style="line-height:1.6">set</strong><span style="line-height:1.6">&nbsp;</span><strong style="line-height:1.6">encoding</strong><span style="line-height:1.6">=utf-8</span></p>
 
 <p>set&nbsp;fileencodings=utf-8,euckr<br />
-=======
 <strong>.vimrc</strong><br />
 <br />
->>>>>>> 4b7274f3ab9544141c54c6b941b36fa919c0b33d
 <span style="color:#000000">map &lt;C-j&gt; :bp &lt;CR&gt;<br />
 map &lt;C-k&gt; :bn &lt;CR&gt;<br />
 <br />
